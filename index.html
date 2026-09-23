@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="html-root">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-lang-ar="هاجر سليمان أحمد | سيرة ذاتية تفاعلية" data-lang-en="Hajer Suleiman Ahmed | Interactive Resume">هاجر سليمان أحمد | سيرة ذاتية تفاعلية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #080808;
+            --card-bg: #121212;
+            --card-border: #1f1f1f;
+            --accent-red: #8B0000;
+            --accent-red-glow: rgba(139, 0, 0, 0.4);
+            --accent-gold: #d97706;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        .lang-switch {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1000;
+            background: var(--card-bg);
+            border: 1px solid var(--accent-red);
+            color: var(--text-main);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 700;
+            font-family: 'Tajawal', sans-serif;
+            box-shadow: 0 0 10px var(--accent-red-glow);
+            transition: all 0.3s ease;
+        }
+
+        .lang-switch:hover {
+            background: var(--accent-red);
+            transform: scale(1.05);
+        }
+
+        header {
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: radial-gradient(circle at center, #1a0505 0%, var(--bg-color) 70%);
+            border-bottom: 2px solid var(--accent-red);
+        }
+
+        header h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+            text-shadow: 0 0 20px var(--accent-red-glow);
+        }
+
+        header p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .contact-links a {
+            color: var(--text-main);
+            text-decoration: none;
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-links a:hover {
+            background: var(--accent-red);
+            border-color: var(--accent-red);
+            box-shadow: 0 0 15px var(--accent-red-glow);
+            transform: translateY(-3px);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
+
+        section {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: transform 0.4s ease, border-color 0.4s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-red);
+        }
+
+        h2 {
+            color: #ffffff;
+            font-size: 1.75rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        h2::before {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 24px;
+            background-color: var(--accent-red);
+            border-radius: 4px;
+            box-shadow: 0 0 10px var(--accent-red);
+        }
+
+        p, li {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+        }
+
+        .skills-grid span {
+            background: #1a0a0a;
+            color: #fca5a5;
+            border: 1px solid #450a0a;
+            padding: 0.5rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .skills-grid span:hover {
+            background: var(--accent-red);
+            color: #fff;
+            box-shadow: 0 0 10px var(--accent-red-glow);
+        }
+
+        .timeline-item {
+            margin-bottom: 1.5rem;
+            padding-right: 1.5rem;
+            border-right: 2px solid var(--card-border);
+        }
+
+        html[dir="ltr"] .timeline-item {
+            padding-right: 0;
+            padding-left: 1.5rem;
+            border-right: none;
+            border-left: 2px solid var(--card-border);
+        }
+
+        .timeline-item h3 {
+            color: var(--text-main);
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-date {
+            color: var(--accent-red);
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .cert-link {
+            color: #fca5a5;
+            text-decoration: underline;
+            cursor: pointer;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+
+        .cert-link:hover {
+            color: #ffffff;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .modal-content {
+            max-width: 80%;
+            max-height: 80vh;
+            object-fit: contain;
+            border-radius: 12px;
+            border: 2px solid var(--accent-red);
+            box-shadow: 0 0 30px var(--accent-red-glow);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 25px;
+            right: 35px;
+            color: #fff;
+            font-size: 3rem;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 2010;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2.5rem;
+            background: #050505;
+            color: var(--text-muted);
+            border-top: 1px solid var(--card-border);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <button class="lang-switch" id="langToggleBtn" onclick="toggleLanguage()">English</button>
+
+    <header data-aos="fade-down" data-aos-duration="1000">
+        <h1 data-lang-ar="هاجر سليمان أحمد" data-lang-en="Hajer Suleiman Ahmed">هاجر سليمان أحمد</h1>
+        <p data-lang-ar="طالبة علوم حاسب | مطورة تطبيقات ومصممة واجهات" data-lang-en="Computer Science Student | App Developer & UI Designer">طالبة علوم حاسب | مطورة تطبيقات ومصممة واجهات</p>
+        <div class="contact-links">
+            <a href="https://wa.me/966594547496" target="_blank" data-lang-ar="📞 0594547496" data-lang-en="📞 0594547496">📞 0594547496</a>
+            <a href="mailto:ahajer800@gmail.com" data-lang-ar="البريد الإلكتروني" data-lang-en="Email">البريد الإلكتروني</a>
+            <a href="https://www.linkedin.com/in/ahmed-hajer-3b6b6932b/" target="_blank">LinkedIn</a>
+            <a href="https://github.com/ahajer800-rgb" target="_blank">GitHub</a>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <section data-aos="fade-up" data-aos-duration="800">
+            <h2 data-lang-ar="الملخص المهني" data-lang-en="Professional Summary">الملخص المهني</h2>
+            <p data-lang-ar="طالبة علوم حاسب تشادية، شغوفة بتطوير البرمجيات وتطبيقات الهواتف المحمولة. أمتلك خبرة عملية في استخدام أدوات وتقنيات مثل Flutter، Node.js، Express، PostgreSQL، بالإضافة إلى مهارات قوية في تصميم واجهات المستخدم والبرمجة ببيئة Visual Studio Code." data-lang-en="A passionate Chadian Computer Science student and software developer. Experienced in working with tools and technologies like Flutter, Node.js, Express, PostgreSQL, alongside strong skills in UI design and coding using Visual Studio Code.">طالبة علوم حاسب تشادية، شغوفة بتطوير البرمجيات وتطبيقات الهواتف المحمولة. أمتلك خبرة عملية في استخدام أدوات وتقنيات مثل Flutter، Node.js، Express، PostgreSQL، بالإضافة إلى مهارات قوية في تصميم واجهات المستخدم والبرمجة ببيئة Visual Studio Code.</p>
+        </section>
+
+        <section data-aos="fade-up" data-aos-duration="800">
+            <h2 data-lang-ar="التعليم الأكاديمي" data-lang-en="Education">التعليم الأكاديمي</h2>
+            <div class="timeline-item">
+                <h3 data-lang-ar="بكالوريوس علوم الحاسب" data-lang-en="Bachelor of Computer Science">بكالوريوس علوم الحاسب</h3>
+                <span class="timeline-date" data-lang-ar="جامعة تبوك | متوقع التخرج: 2029" data-lang-en="University of Tabuk | Expected Graduation: 2029">جامعة تبوك | متوقع التخرج: 2029</span>
+                <p data-lang-ar="دراسة المقررات الأساسية في علوم الحاسب، حل المشكلات البرمجية، وهياكل البيانات." data-lang-en="Studying core computer science courses, algorithmic problem solving, and data structures.">دراسة المقررات الأساسية في علوم الحاسب، حل المشكلات البرمجية، وهياكل البيانات.</p>
+            </div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-duration="800">
+            <h2 data-lang-ar="المهارات التقنية واللغات" data-lang-en="Technical Skills & Languages">المهارات التقنية واللغات</h2>
+            <div class="skills-grid">
+                <span>Flutter</span>
+                <span>Node.js & Express</span>
+                <span>PostgreSQL</span>
+                <span>JavaScript / TypeScript</span>
+                <span>Python / Data Analysis</span>
+                <span>SQL</span>
+                <span>Artificial Intelligence (AI)</span>
+                <span>Blender</span>
+                <span>Visual Studio / Code</span>
+                <span data-lang-ar="اللغة العربية (اللغة الأم)" data-lang-en="Arabic (Native)">اللغة العربية (اللغة الأم)</span>
+                <span data-lang-ar="اللغة الإنجليزية" data-lang-en="English">اللغة الإنجليزية</span>
+            </div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-duration="800">
+            <h2 data-lang-ar="المشاريع البارزة" data-lang-en="Featured Projects">المشاريع البارزة</h2>
+            <div class="timeline-item">
+                <h3 data-lang-ar="تطبيق Velora / HireMe" data-lang-en="Velora / HireMe App">تطبيق Velora / HireMe</h3>
+                <span class="timeline-date" data-lang-ar="تطوير تطبيقات الجوال والأنظمة" data-lang-en="Mobile & Systems Development">تطوير تطبيقات الجوال والأنظمة</span>
+                <p data-lang-ar="تطوير تطبيق يهدف لربط الطلاب بفرص العمل المؤقتة. تم تنفيذ التصميم وتطوير الواجهات والبرمجة بالاعتماد على بيئة <strong>Visual Studio Code</strong>، بناء الواجهات الخلفية عبر <strong>Node.js و PostgreSQL</strong>، وبرمجة الشاشات باستخدام <strong>Flutter</strong>." data-lang-en="Developing an app to connect students with temporary job opportunities. UI design and system coding were executed using <strong>Visual Studio Code</strong>, built backend APIs via <strong>Node.js & PostgreSQL</strong>, and coded mobile screens using <strong>Flutter</strong>.">تطوير تطبيق يهدف لربط الطلاب بفرص العمل المؤقتة. تم تنفيذ التصميم وتطوير الواجهات والبرمجة بالاعتماد على بيئة <strong>Visual Studio Code</strong>، بناء الواجهات الخلفية عبر <strong>Node.js و PostgreSQL</strong>، وبرمجة الشاشات باستخدام <strong>Flutter</strong>.</p>
+            </div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-duration="800">
+            <h2 data-lang-ar="الدورات التدريبية والشهادات" data-lang-en="Training Courses & Certificates">الدورات التدريبية والشهادات</h2>
+            
+            <div class="timeline-item">
+                <h3 data-lang-ar="محاضرة الذكاء الاصطناعي في البحث العلمي" data-lang-en="AI in Scientific Research Lecture">محاضرة الذكاء الاصطناعي في البحث العلمي</h3>
+                <span class="timeline-date" data-lang-ar="جامعة تبوك - معهد تعليم اللغة الإنجليزية (أبريل 2026)" data-lang-en="University of Tabuk - English Language Institute (April 2026)">جامعة تبوك - معهد تعليم اللغة الإنجليزية (أبريل 2026)</span>
+                <p>
+                    <span data-lang-ar="حضور محاضرة استكشافية حول " data-lang-en="Attending an exploratory lecture on ">حضور محاضرة استكشافية حول </span>
+                    <span class="cert-link" onclick="openModal('ai-cert.png')" data-lang-ar="استخدام الذكاء الاصطناعي في البحث العلمي وتوظيف التقنيات الذكية (عرض الشهادة)" data-lang-en="the use of Artificial Intelligence in scientific research and smart technologies (View Certificate)">استخدام الذكاء الاصطناعي في البحث العلمي وتوظيف التقنيات الذكية (عرض الشهادة)</span>.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <h3 data-lang-ar="ندوة أسرار عمليات إدارة التغيير" data-lang-en="Secrets of Change Management Processes Seminar">ندوة أسرار عمليات إدارة التغيير</h3>
+                <span class="timeline-date" data-lang-ar="جامعة ميدأوشن (يوليو 2026)" data-lang-en="Midocean University (July 2026)">جامعة ميدأوشن (يوليو 2026)</span>
+                <p>
+                    <span data-lang-ar="المشاركة في ندوة متخصصة بعنوان " data-lang-en="Participating in a specialized seminar titled ">المشاركة في ندوة متخصصة بعنوان </span>
+                    <span class="cert-link" onclick="openModal('change-cert.png')" data-lang-ar="Secrets of Change Management Processes لتطوير المهارات القيادية (عرض الشهادة)" data-lang-en="Secrets of Change Management Processes for developing leadership skills (View Certificate)">Secrets of Change Management Processes لتطوير المهارات القيادية (عرض الشهادة)</span>.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <h3 data-lang-ar="رحلة تحليل البيانات الكاملة باستخدام Python" data-lang-en="Complete Data Analysis Journey Using Python">رحلة تحليل البيانات الكاملة باستخدام Python</h3>
+                <span class="timeline-date" data-lang-ar="مركز تقنيات العلوم للتدريب (سبتمبر 2026)" data-lang-en="Science Technologies Training Center (September 2026)">مركز تقنيات العلوم للتدريب (سبتمبر 2026)</span>
+                <p>
+                    <span data-lang-ar="إتمام ورشة عمل تطبيقية في مجال " data-lang-en="Completing a practical workshop in ">إتمام ورشة عمل تطبيقية في مجال </span>
+                    <span class="cert-link" onclick="openModal('python-cert.png')" data-lang-ar="تحليل البيانات بلغة بايثون Python (عرض الشهادة)" data-lang-en="Data Analysis using Python (View Certificate)">تحليل البيانات بلغة بايثون Python (عرض الشهادة)</span>.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <h3 data-lang-ar="رحلة تحليل البيانات الكاملة باستخدام SQL" data-lang-en="Complete Data Analysis Journey Using SQL">رحلة تحليل البيانات الكاملة باستخدام SQL</h3>
+                <span class="timeline-date" data-lang-ar="مركز تقنيات العلوم للتدريب (سبتمبر 2026)" data-lang-en="Science Technologies Training Center (September 2026)">مركز تقنيات العلوم للتدريب (سبتمبر 2026)</span>
+                <p>
+                    <span data-lang-ar="إتمام ورشة عمل تطبيقية في مجال " data-lang-en="Completing a practical workshop in ">إتمام ورشة عمل تطبيقية في مجال </span>
+                    <span class="cert-link" onclick="openModal('sql-cert.png')" data-lang-ar="إدارة وقواعد البيانات واستعلامات SQL (عرض الشهادة)" data-lang-en="Database Management and SQL Queries (View Certificate)">إدارة وقواعد البيانات واستعلامات SQL (عرض الشهادة)</span>.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <h3 data-lang-ar="ورشة عمل التصميم ثلاثي الأبعاد (Blender)" data-lang-en="3D Design Workshop (Blender)">ورشة عمل التصميم ثلاثي الأبعاد (Blender)</h3>
+                <span class="timeline-date" data-lang-ar="منظمة بواسطة BQR و Enkidu Studio" data-lang-en="Organized by BQR and Enkidu Studio">منظمة بواسطة BQR و Enkidu Studio</span>
+                <p data-lang-ar="تطوير مهارات تقنية في التصميم والنمذجة ثلاثية الأبعاد." data-lang-en="Developing technical skills in 3D design and modeling.">تطوير مهارات تقنية في التصميم والنمذجة ثلاثية الأبعاد.</p>
+            </div>
+        </section>
+
+        <section data-aos="fade-up" data-aos-duration="800">
+            <h2 data-lang-ar="العمل التطوعي والمجتمعي" data-lang-en="Community Volunteering">العمل التطوعي والمجتمعي</h2>
+            <div class="timeline-item">
+                <h3 data-lang-ar="منصة العمل التطوعي الوطني" data-lang-en="National Volunteering Platform">منصة العمل التطوعي الوطني</h3>
+                <span class="timeline-date" data-lang-ar="إجمالي 107 ساعات تطوعية معتمدة" data-lang-en="Total of 107 Certified Volunteer Hours">إجمالي 107 ساعات تطوعية معتمدة</span>
+                <p data-lang-ar="المساهمة الفعالة في تنظيم الفعاليات المجتمعية، إدارة المهام التنظيمية، وخدمة المجتمع بأكثر من 107 ساعات تطوعية موثقة." data-lang-en="Actively contributed to community event organization, management tasks, and community service with over 107 documented volunteer hours.">المساهمة الفعالة في تنظيم الفعاليات المجتمعية، إدارة المهام التنظيمية، وخدمة المجتمع بأكثر من 107 ساعات تطوعية موثقة.</p>
+            </div>
+        </section>
+
+    </div>
+
+    <div id="certModal" class="modal" onclick="closeModal()">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="certImage" src="" alt="صورة الشهادة">
+    </div>
+
+    <footer>
+        <p data-lang-ar="تم التصميم والتطوير بواسطة هاجر سليمان أحمد © 2026" data-lang-en="Designed & Developed by Hajer Suleiman Ahmed © 2026">تم التصميم والتطوير بواسطة هاجر سليمان أحمد © 2026</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, offset: 100 });
+
+        let currentLang = 'ar';
+        function toggleLanguage() {
+            const htmlRoot = document.getElementById('html-root');
+            const btn = document.getElementById('langToggleBtn');
+            const elements = document.querySelectorAll('[data-lang-ar]');
+
+            if (currentLang === 'ar') {
+                currentLang = 'en';
+                htmlRoot.setAttribute('dir', 'ltr');
+                htmlRoot.setAttribute('lang', 'en');
+                btn.textContent = 'العربية';
+                elements.forEach(el => {
+                    el.innerHTML = el.getAttribute('data-lang-en');
+                });
+            } else {
+                currentLang = 'ar';
+                htmlRoot.setAttribute('dir', 'rtl');
+                htmlRoot.setAttribute('lang', 'ar');
+                btn.textContent = 'English';
+                elements.forEach(el => {
+                    el.innerHTML = el.getAttribute('data-lang-ar');
+                });
+            }
+        }
+
+        function openModal(imageSrc) {
+            const modal = document.getElementById('certModal');
+            const modalImg = document.getElementById('certImage');
+            modal.style.display = "flex";
+            modalImg.src = imageSrc;
+        }
+
+        function closeModal() {
+            document.getElementById('certModal').style.display = "none";
+        }
+    </script>
+</body>
+</html>
