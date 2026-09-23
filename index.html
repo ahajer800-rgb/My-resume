@@ -213,40 +213,6 @@
             color: #ffffff;
         }
 
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.9);
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
-        }
-
-        .modal-content {
-            max-width: 80%;
-            max-height: 80vh;
-            object-fit: contain;
-            border-radius: 12px;
-            border: 2px solid var(--accent-red);
-            box-shadow: 0 0 30px var(--accent-red-glow);
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 25px;
-            right: 35px;
-            color: #fff;
-            font-size: 3rem;
-            font-weight: bold;
-            cursor: pointer;
-            z-index: 2010;
-        }
-
         footer {
             text-align: center;
             padding: 2.5rem;
@@ -263,7 +229,7 @@
 
     <header data-aos="fade-down" data-aos-duration="1000">
         <h1 data-lang-ar="هاجر سليمان أحمد" data-lang-en="Hajer Suleiman Ahmed">هاجر سليمان أحمد</h1>
-        <p data-lang-ar="طالبة علوم حاسب | مطورة تطبيقات ومصممة واجهات" data-lang-en="Computer Science Student | App Developer & UI Designer">طالبة علوم حاسب | مطورة تطبيقات ومصممة واجهات</p>
+        <p data-lang-ar="طالبة علوم حاسب تشادية | مطورة تطبيقات ومصممة واجهات" data-lang-en="Chadian Computer Science Student | App Developer & UI Designer">طالبة علوم حاسب تشادية | مطورة تطبيقات ومصممة واجهات</p>
         <div class="contact-links">
             <a href="https://wa.me/966594547496" target="_blank" data-lang-ar="📞 0594547496" data-lang-en="📞 0594547496">📞 0594547496</a>
             <a href="mailto:ahajer800@gmail.com" data-lang-ar="البريد الإلكتروني" data-lang-en="Email">البريد الإلكتروني</a>
@@ -322,7 +288,7 @@
                 <span class="timeline-date" data-lang-ar="جامعة تبوك - معهد تعليم اللغة الإنجليزية (أبريل 2026)" data-lang-en="University of Tabuk - English Language Institute (April 2026)">جامعة تبوك - معهد تعليم اللغة الإنجليزية (أبريل 2026)</span>
                 <p>
                     <span data-lang-ar="حضور محاضرة استكشافية حول " data-lang-en="Attending an exploratory lecture on ">حضور محاضرة استكشافية حول </span>
-                    <span class="cert-link" onclick="openModal('ai-cert.png')" data-lang-ar="استخدام الذكاء الاصطناعي في البحث العلمي وتوظيف التقنيات الذكية (عرض الشهادة)" data-lang-en="the use of Artificial Intelligence in scientific research and smart technologies (View Certificate)">استخدام الذكاء الاصطناعي في البحث العلمي وتوظيف التقنيات الذكية (عرض الشهادة)</span>.
+                    <a href="ai-cert.pdf" target="_blank" class="cert-link" data-lang-ar="استخدام الذكاء الاصطناعي في البحث العلمي وتوظيف التقنيات الذكية (عرض الشهادة PDF)" data-lang-en="the use of Artificial Intelligence in scientific research and smart technologies (View Certificate PDF)">استخدام الذكاء الاصطناعي في البحث العلمي وتوظيف التقنيات الذكية (عرض الشهادة PDF)</a>.
                 </p>
             </div>
 
@@ -331,7 +297,7 @@
                 <span class="timeline-date" data-lang-ar="جامعة ميدأوشن (يوليو 2026)" data-lang-en="Midocean University (July 2026)">جامعة ميدأوشن (يوليو 2026)</span>
                 <p>
                     <span data-lang-ar="المشاركة في ندوة متخصصة بعنوان " data-lang-en="Participating in a specialized seminar titled ">المشاركة في ندوة متخصصة بعنوان </span>
-                    <span class="cert-link" onclick="openModal('change-cert.png')" data-lang-ar="Secrets of Change Management Processes لتطوير المهارات القيادية (عرض الشهادة)" data-lang-en="Secrets of Change Management Processes for developing leadership skills (View Certificate)">Secrets of Change Management Processes لتطوير المهارات القيادية (عرض الشهادة)</span>.
+                    <a href="change-cert.pdf" target="_blank" class="cert-link" data-lang-ar="Secrets of Change Management Processes لتطوير المهارات القيادية (عرض الشهادة PDF)" data-lang-en="Secrets of Change Management Processes for developing leadership skills (View Certificate PDF)">Secrets of Change Management Processes لتطوير المهارات القيادية (عرض الشهادة PDF)</a>.
                 </p>
             </div>
 
@@ -340,7 +306,7 @@
                 <span class="timeline-date" data-lang-ar="مركز تقنيات العلوم للتدريب (سبتمبر 2026)" data-lang-en="Science Technologies Training Center (September 2026)">مركز تقنيات العلوم للتدريب (سبتمبر 2026)</span>
                 <p>
                     <span data-lang-ar="إتمام ورشة عمل تطبيقية في مجال " data-lang-en="Completing a practical workshop in ">إتمام ورشة عمل تطبيقية في مجال </span>
-                    <span class="cert-link" onclick="openModal('python-cert.png')" data-lang-ar="تحليل البيانات بلغة بايثون Python (عرض الشهادة)" data-lang-en="Data Analysis using Python (View Certificate)">تحليل البيانات بلغة بايثون Python (عرض الشهادة)</span>.
+                    <a href="python-cert.pdf" target="_blank" class="cert-link" data-lang-ar="تحليل البيانات بلغة بايثون Python (عرض الشهادة PDF)" data-lang-en="Data Analysis using Python (View Certificate PDF)">تحليل البيانات بلغة بايثون Python (عرض الشهادة PDF)</a>.
                 </p>
             </div>
 
@@ -349,7 +315,7 @@
                 <span class="timeline-date" data-lang-ar="مركز تقنيات العلوم للتدريب (سبتمبر 2026)" data-lang-en="Science Technologies Training Center (September 2026)">مركز تقنيات العلوم للتدريب (سبتمبر 2026)</span>
                 <p>
                     <span data-lang-ar="إتمام ورشة عمل تطبيقية في مجال " data-lang-en="Completing a practical workshop in ">إتمام ورشة عمل تطبيقية في مجال </span>
-                    <span class="cert-link" onclick="openModal('sql-cert.png')" data-lang-ar="إدارة وقواعد البيانات واستعلامات SQL (عرض الشهادة)" data-lang-en="Database Management and SQL Queries (View Certificate)">إدارة وقواعد البيانات واستعلامات SQL (عرض الشهادة)</span>.
+                    <a href="sql-cert.pdf" target="_blank" class="cert-link" data-lang-ar="إدارة وقواعد البيانات واستعلامات SQL (عرض الشهادة PDF)" data-lang-en="Database Management and SQL Queries (View Certificate PDF)">إدارة وقواعد البيانات واستعلامات SQL (عرض الشهادة PDF)</a>.
                 </p>
             </div>
 
@@ -369,11 +335,6 @@
             </div>
         </section>
 
-    </div>
-
-    <div id="certModal" class="modal" onclick="closeModal()">
-        <span class="close-modal">&times;</span>
-        <img class="modal-content" id="certImage" src="" alt="صورة الشهادة">
     </div>
 
     <footer>
@@ -407,17 +368,6 @@
                     el.innerHTML = el.getAttribute('data-lang-ar');
                 });
             }
-        }
-
-        function openModal(imageSrc) {
-            const modal = document.getElementById('certModal');
-            const modalImg = document.getElementById('certImage');
-            modal.style.display = "flex";
-            modalImg.src = imageSrc;
-        }
-
-        function closeModal() {
-            document.getElementById('certModal').style.display = "none";
         }
     </script>
 </body>
